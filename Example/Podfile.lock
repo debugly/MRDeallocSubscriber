@@ -1,0 +1,16 @@
+PODS:
+  - MRDeallocSubscriber (0.1.0)
+
+DEPENDENCIES:
+  - MRDeallocSubscriber (from `../`)
+
+EXTERNAL SOURCES:
+  MRDeallocSubscriber:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MRDeallocSubscriber: f4532c6446405a7faa5fc4eaeca55f4217d76220
+
+PODFILE CHECKSUM: 91c0a0484b985640f09bbf8cdf410172de70fc8d
+
+COCOAPODS: 1.9.1
