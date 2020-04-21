@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'MRDeallocSubscriber_Example' do
+  pod 'MRDeallocSubscriber', :path => '../'
+
+  target 'MRDeallocSubscriber_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
