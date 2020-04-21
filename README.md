@@ -42,7 +42,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-Available macOS(10.5) and iOS(6.0).
+Available macOS(10.6) and iOS(6.0).
 
 ## Installation
 

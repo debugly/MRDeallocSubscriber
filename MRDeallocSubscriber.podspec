@@ -32,7 +32,7 @@ If you want "bind" obj A to obj B，require them have same lifecycle，you can u
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '6.0'
-  s.osx.deployment_target = '10.5'
+  s.osx.deployment_target = '10.6'
   s.source_files = 'MRDeallocSubscriber/Classes/**/*'
   s.public_header_files = 'MRDeallocSubscriber/Classes/MRSubscriberProtocol.h', 'MRDeallocSubscriber/Classes/NSObject+MRDeallocSubscriber.h'
   

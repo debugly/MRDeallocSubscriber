@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(macos(10.5), ios(6.0))
+API_AVAILABLE(macos(10.6), ios(6.0))
 @interface MRSubscribersRef : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;

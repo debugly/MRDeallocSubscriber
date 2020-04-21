@@ -12,7 +12,7 @@ typedef void(^MROnDeallocBlock)(void);
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(macos(10.5), ios(6.0))
+API_AVAILABLE(macos(10.6), ios(6.0))
 @interface NSObject (MRDeallocSubscriber)
 
 /// 向调用对象添加dealloc事件若引用订阅者，
