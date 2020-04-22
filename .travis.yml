@@ -6,10 +6,10 @@ osx_image: xcode11.3
 language: objective-c
 xcode_destination: platform=iOS Simulator,OS=13.2,name=iPhone X
 # cache: cocoapods
-# podfile: Example/Podfile
-# before_install:
-# - gem install cocoapods # Since Travis is not always on latest version
-# - pod install --project-directory=Example
+podfile: Example/Podfile
+before_install:
+ - gem install cocoapods # Since Travis is not always on latest version
+ - pod install --project-directory=Example
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/MRDeallocSubscriber.xcworkspace -scheme MRDeallocSubscriber-Example -destination 'platform=iOS Simulator,OS=13.2,name=iPhone 8' ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/MRDeallocSubscriber.xcworkspace -scheme MRDeallocSubscriber_Tests -destination 'platform=iOS Simulator,OS=13.2,name=iPhone 8' ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint --allow-warnings
