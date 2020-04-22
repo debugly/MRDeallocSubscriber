@@ -9,6 +9,12 @@
 
 #import "MRTask.h"
 
+@interface MRTask ()
+
+@property (nonatomic, copy) dispatch_block_t onCanceCallback;
+
+@end
+
 @implementation MRTask
 
 - (instancetype)initWithName:(NSString *)name
@@ -28,6 +34,14 @@
 - (void)cancel
 {
     NSLog(@"耗时操作已经取消！");
+    if (self.onCanceCallback) {
+        self.onCanceCallback();
+    }
+}
+
+- (void)onCanceld:(dispatch_block_t)callback
+{
+    self.onCanceCallback = callback;
 }
 
 - (void)mr_onDeallocPublish

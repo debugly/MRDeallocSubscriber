@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithName:(NSString *)name;
 
+- (void)onCanceld:(dispatch_block_t)callback;
+
 @end
 
 NS_ASSUME_NONNULL_END

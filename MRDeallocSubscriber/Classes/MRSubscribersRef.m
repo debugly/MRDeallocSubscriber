@@ -49,6 +49,7 @@
         [[_subscriberTable allObjects] enumerateObjectsUsingBlock:^(id<MRSubscriberProtocol>sub, NSUInteger idx, BOOL * _Nonnull stop) {
             [sub mr_onDeallocPublish];
         }];
+        [_subscriberTable removeAllObjects];
     }
 }
 

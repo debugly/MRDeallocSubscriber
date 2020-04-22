@@ -27,6 +27,10 @@
     self.testObj = [NSObject new];
     [self showMsg:@"创建testObj，等待来订阅"];
     self.request = [[MRTask alloc] initWithName:@"耗时任务1，我被 ViewController 持有了,没有被testObj持有"];
+    [self.request onCanceld:^{
+        [self showMsg:@"耗时任务1 被 ViewController 持有着，所以只是取消"];
+    }];
+    
     [self showMsg:@"耗时任务1，开始执行了"];
 }
 
@@ -48,6 +52,10 @@
         
     } else if (tag == 2000) {
         MRTask *req = [[MRTask alloc] initWithName:@"耗时任务2，我通过强引用订阅方式，获取到了跟 testObj 对象相同的声明周期"];
+        [req onCanceld:^{
+            [self showMsg:@"绑定对象被销毁了，因此耗时任务2 也被销毁"];
+        }];
+        
         [self.testObj mr_addStrongDeallocSubscriber:req];
         
         [self showMsg:req.name];
@@ -59,8 +67,6 @@
         [self showMsg:@"--------------------"];
         [self showMsg:@"[testObj] 销毁了"];
         self.testObj = nil;
-        
-        [self showMsg:@"耗时任务1 被取消了，耗时任务2 被销毁了，因为耗时任务1被 ViewController 持有了"];
     }
 }
 
